@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Calculator{
     public static void main(String[] args){
 		
-      int choice == -999;
+      int choice;
       Scanner sc = new Scanner(System.in);
 			
       do{
