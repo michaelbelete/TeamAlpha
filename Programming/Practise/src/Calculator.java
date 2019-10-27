@@ -21,6 +21,14 @@ public class Calculator{
         System.out.println();
     }
 	
+	private static void printAnswer(String message) {
+        // 'message' is what has been computed
+
+        System.out.printf("%s of %.2f is %.2f\n", message, input, result);
+        System.out.println();
+    }
+
+	
     public static void main(String[] args){	
       int choice;
       Scanner sc = new Scanner(System.in);
