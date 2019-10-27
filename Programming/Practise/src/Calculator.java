@@ -57,6 +57,12 @@ public class Calculator{
         printAnswer("cos inverse");
     }
 	
+	private static void tanInverse() {
+        acceptInput("Tangent value", "Tan inverse");
+        result = Math.toDegrees(Math.atan(input));
+        printAnswer("tan inverse");
+    }
+
     public static void main(String[] args){	
       int choice;
       Scanner sc = new Scanner(System.in);
