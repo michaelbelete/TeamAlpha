@@ -148,18 +148,32 @@ public class Calculator{
         } while (repeat && choice != 3);
     }
 
-    public static void main(String[] args){	
-      int choice;
-      Scanner sc = new Scanner(System.in);
-			
-      do{
-			
-        System.out.println("[1] for trig");
-        System.out.println("[2] for log"); 
-        System.out.println("[3] quit");
-        choice = sc.nextInt(); 
-				
-      }while(choice != 3);    
+    public static void main(String[] args) {
+        int choice;
+        do{
+           System.out.println("======[Main-Menu]======");
+           System.out.println("    [1] for trig");
+           System.out.println("    [2] for log");
+           System.out.println("    [3] Quit!");
+           choice = sc.nextInt();
+
+           switch (choice){
+                case 1:
+                    trig();
+                    break;
+                case 2:
+                    log();
+                    break;
+				case 3:
+					repeat = false;
+					break;
+				default:
+					System.out.println("Invalid Input...!");
+                }
+            }while(choice != 3 && repeat);
+
+            System.out.println("======[Thank You For Using The App!]======");
+        }
     }
 }
 
