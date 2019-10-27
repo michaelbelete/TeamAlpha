@@ -32,6 +32,12 @@ public class Calculator{
         result = Math.sin(Math.toRadians(input));
         printAnswer("Sine");
     }
+	
+	private static void cos() {
+        acceptInput("degree", "Cosine");
+        result = Math.cos(Math.toRadians(input));
+        printAnswer("Cosine");
+    }
 
 	
     public static void main(String[] args){	
