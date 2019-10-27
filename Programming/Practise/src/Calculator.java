@@ -74,6 +74,51 @@ public class Calculator{
         result = Math.log10(input);
         printAnswer("Log in base 10");
     }
+	
+	// trig menu
+	private static void trig() {
+        int choice;
+        do {
+            System.out.println("======[Trig]======");
+            System.out.println("   [1] for sine");
+            System.out.println("   [2] for cosine");
+            System.out.println("   [3] for tangent");
+            System.out.println("   [4] for sine inverse");
+            System.out.println("   [5] for cosine inverse");
+            System.out.println("   [6] for tangent inverse");
+            System.out.println("   [7] go back to main-menu");
+            System.out.println("   [8] Quit!");
+
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    sin();
+                    break;
+                case 2:
+                    cos();
+                    break;
+                case 3:
+                    tan();
+                    break;
+                case 4:
+                    sineInverse();
+                    break;
+                case 5:
+                    cosInverse();
+                    break;
+                case 6:
+                    tanInverse();
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    repeat = false;
+                    break;
+                default:
+                    System.out.println("Invalid input...!\n");
+           }
+        } while (choice != 7 && repeat);
+    }
 
     public static void main(String[] args){	
       int choice;
