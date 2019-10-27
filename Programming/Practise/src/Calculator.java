@@ -2,6 +2,10 @@
 // @author Eyob Alemu
 
 import java.util.Scanner;
+	private static double result; // Holds every computation result
+    private static double input; // accepts values to be computed
+    private static boolean repeat = true; // weather to continue or not
+    private static Scanner sc = new Scanner(System.in); 
 
 public class Calculator{
     public static void main(String[] args){
