@@ -27,6 +27,11 @@ public class Calculator{
         System.out.printf("%s of %.2f is %.2f\n", message, input, result);
         System.out.println();
     }
+	private static void sin() {
+        acceptInput("degree", "Sine");
+        result = Math.sin(Math.toRadians(input));
+        printAnswer("Sine");
+    }
 
 	
     public static void main(String[] args){	
