@@ -38,6 +38,12 @@ public class Calculator{
         result = Math.cos(Math.toRadians(input));
         printAnswer("Cosine");
     }
+	
+	 private static void tan() {
+        acceptInput("degree", "Tangent");
+        result = Math.tan(Math.toRadians(input));
+        printAnswer("Tangent");
+    }
 
 	
     public static void main(String[] args){	
