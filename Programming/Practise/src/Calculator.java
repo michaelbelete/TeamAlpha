@@ -62,7 +62,13 @@ public class Calculator{
         result = Math.toDegrees(Math.atan(input));
         printAnswer("tan inverse");
     }
-
+	
+	private static void ln() {
+        acceptInput("Value", "ln");
+        result = Math.log(input);
+        printAnswer("Natural log(ln)");
+    }
+	
     public static void main(String[] args){	
       int choice;
       Scanner sc = new Scanner(System.in);
