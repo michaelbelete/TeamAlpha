@@ -51,6 +51,12 @@ public class Calculator{
         printAnswer("sin inverse");
     }
 	
+	private static void cosInverse() {
+        acceptInput("cosine value", "cos inverse");
+        result = Math.toDegrees(Math.acos(input));
+        printAnswer("cos inverse");
+    }
+	
     public static void main(String[] args){	
       int choice;
       Scanner sc = new Scanner(System.in);
