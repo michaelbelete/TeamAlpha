@@ -119,6 +119,34 @@ public class Calculator{
            }
         } while (choice != 7 && repeat);
     }
+	
+	private static void log() {
+        int choice;
+        do {
+            System.out.println("======[Log]======");
+            System.out.println("   [1] for ln");
+            System.out.println("   [2] for log10");
+            System.out.println("   [3] go back to main-menu");
+            System.out.println("   [4] Quit!");
+
+            choice = sc.nextInt();
+            switch (choice){
+                case 1:
+                    ln();
+                    break;
+                case 2:
+                    log10();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    repeat = false;
+                    break;
+                default:
+                    System.out.println("Invalid input...!\n");
+            }
+        } while (repeat && choice != 3);
+    }
 
     public static void main(String[] args){	
       int choice;
