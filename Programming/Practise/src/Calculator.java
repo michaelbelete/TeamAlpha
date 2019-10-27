@@ -69,6 +69,12 @@ public class Calculator{
         printAnswer("Natural log(ln)");
     }
 	
+	private static void log10() {
+        acceptInput("Value", "log10");
+        result = Math.log10(input);
+        printAnswer("Log in base 10");
+    }
+
     public static void main(String[] args){	
       int choice;
       Scanner sc = new Scanner(System.in);
