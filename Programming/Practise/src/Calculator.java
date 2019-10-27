@@ -39,12 +39,17 @@ public class Calculator{
         printAnswer("Cosine");
     }
 	
-	 private static void tan() {
+	private static void tan() {
         acceptInput("degree", "Tangent");
         result = Math.tan(Math.toRadians(input));
         printAnswer("Tangent");
     }
-
+	
+	private static void sineInverse() {
+        acceptInput("sine value", "sine inverse");
+        result = Math.toDegrees(Math.asin(input));
+        printAnswer("sin inverse");
+    }
 	
     public static void main(String[] args){	
       int choice;
