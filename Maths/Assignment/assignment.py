@@ -85,6 +85,7 @@ def symmetricDifference(A,B):
 def acceptBoolean():
     while True:
         A = input("Enter Truth value([1] for True/[0] for False): ")
+        print()
         try:
             A = bool(int(A))
             return A               
@@ -93,7 +94,7 @@ def acceptBoolean():
                     
     
 def logicalOperations():
-    while True:
+    while True:       
         print('''=====[Logical Operations]=====
         [1] Negation
         [2] Conjunction
@@ -105,14 +106,35 @@ def logicalOperations():
         print()
         
         choice = input("Choice: ")
+        print()
         
-        if choice == "1":
-            print()
+        if choice == "1":            
+            A = acceptBoolean()            
+            print("Negation of {} is {}\n".format(A,negation(A)))
+        elif choice == "2":
             A = acceptBoolean()
-            print(negation(A))
-        elif choice == "7":
-            print()
+            B = acceptBoolean()
+            print("Conjunction of {} and {} is {}\n".format(A,B,conjunction(A,B)))
+        elif choice == "3":
+            A = acceptBoolean()
+            B = acceptBoolean()
+            print("Disjunction of {} and {} is {}\n".format(A,B,disjunction(A,B)))
+        elif choice == "4":
+            A = acceptBoolean()
+            B = acceptBoolean()
+            print("Exculisive OR of {} and {} is {}\n".format(A,B,exclusiveOR(A,B)))
+        elif choice == "5":
+            A = acceptBoolean()
+            B = acceptBoolean()
+            print("Implication of {} and {} is {}\n".format(A,B,implication(A,B)))
+        elif choice == "6":
+            A = acceptBoolean()
+            B = acceptBoolean()
+            print("Biconditional of {} and {} is {}\n".format(A,B,biconditional(A,B)))
+        elif choice == "7":          
             break
+        else:
+            print("Invalid Input!\n")
 
 def setOperations():
     print("set")
@@ -126,20 +148,17 @@ def main():
         print()
         
         choice = input("Choice: ")
+        print()
             
-        if choice == "1":
-            print()
+        if choice == "1":            
             logicalOperations()       
-        elif choice == "2":
-            print()
+        elif choice == "2":         
             setOperations()
-        elif choice == "3":
-            print()
+        elif choice == "3":            
             print("Bye, Thank You for using the program!")
             break            
-        else:
-            print()
-            print("Invalid Input!")
+        else:           
+            print("Invalid Input!\n")
                 
 
 main()
