@@ -59,10 +59,11 @@ def biconditional(p,q):
             return False
 
 def union(A,B):
+    res = [element for element in A]
     for element in B:
         if element not in A:
-            A.append(element)
-    return A                                                                                                                                                                                
+            res.append(element)
+    return res                                                                                                                                                                                
 
 def intersection(A,B):
     res = []
@@ -91,7 +92,14 @@ def acceptBoolean():
             return A               
         except:
             print("Invalid Input(1 or 0 only")
-                    
+
+def acceptSet():
+    A = input("Enter elements separated by space: ").split()
+    try:
+        A = [int(element) for element in A]
+    except:
+        pass                                   
+    return A 
     
 def logicalOperations():
     while True:       
@@ -109,35 +117,70 @@ def logicalOperations():
         print()
         
         if choice == "1":            
-            A = acceptBoolean()            
-            print("Negation of {} is {}\n".format(A,negation(A)))
+            P = acceptBoolean()            
+            print("Negation of {} is {}\n".format(P,negation(P)))
         elif choice == "2":
-            A = acceptBoolean()
-            B = acceptBoolean()
-            print("Conjunction of {} and {} is {}\n".format(A,B,conjunction(A,B)))
+            P = acceptBoolean()
+            Q = acceptBoolean()
+            print("Conjunction of {} and {} is {}\n".format(P,Q,conjunction(P,Q)))
         elif choice == "3":
-            A = acceptBoolean()
-            B = acceptBoolean()
-            print("Disjunction of {} and {} is {}\n".format(A,B,disjunction(A,B)))
+            P = acceptBoolean()
+            Q = acceptBoolean()
+            print("Disjunction of {} and {} is {}\n".format(P,Q,disjunction(P,Q)))
         elif choice == "4":
-            A = acceptBoolean()
-            B = acceptBoolean()
-            print("Exculisive OR of {} and {} is {}\n".format(A,B,exclusiveOR(A,B)))
+            P = acceptBoolean()
+            Q = acceptBoolean()
+            print("Exculisive OR of {} and {} is {}\n".format(P,Q,exclusiveOR(P,Q)))
         elif choice == "5":
-            A = acceptBoolean()
-            B = acceptBoolean()
-            print("Implication of {} and {} is {}\n".format(A,B,implication(A,B)))
+            P = acceptBoolean()
+            Q = acceptBoolean()
+            print("Implication of {} and {} is {}\n".format(P,Q,implication(P,Q)))
         elif choice == "6":
-            A = acceptBoolean()
-            B = acceptBoolean()
-            print("Biconditional of {} and {} is {}\n".format(A,B,biconditional(A,B)))
+            P = acceptBoolean()
+            Q = acceptBoolean()
+            print("Biconditional of {} and {} is {}\n".format(P,Q,biconditional(P,Q)))
         elif choice == "7":          
             break
         else:
             print("Invalid Input!\n")
 
 def setOperations():
-    print("set")
+    while True:
+        print('''=====[Set Operations]=====
+        [1] Union
+        [2] Intersection
+        [3] Difference
+        [4] Symmetric Difference
+        [5] Power Set
+        [6] Main-Menu''')
+        print()
+        
+        choice = input("Choice: ")
+        print()
+        
+        if choice == '1':
+            A = acceptSet()            
+            B = acceptSet()                                                         
+            print("\nUnion of {} and {} is {}\n".format(A,B,union(A,B)))
+        elif choice == '2':
+            A = acceptSet()            
+            B = acceptSet()            
+            print("\nIntersection of {} and {} is {}\n".format(A,B,intersection(A,B)))
+        elif choice == '3':
+            A = acceptSet()            
+            B = acceptSet()            
+            print("\nDifference of {} and {} is {}\n".format(A,B,difference(A,B)))
+        elif choice == '4':
+            A = acceptSet()            
+            B = acceptSet()            
+            print("\nSymmetric difference of {} and {} is {}\n".format(A,B,symmetricDifference(A,B)))
+        elif choice == '5':
+            # A = acceptSet()                                  
+            print("\nPower Set(Coming Soon!)\n")       
+        elif choice == '6':
+           break
+        else:
+           print("Invalid Input!\n")
                 
 def main():
     while True:
