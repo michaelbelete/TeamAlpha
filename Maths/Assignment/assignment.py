@@ -1,5 +1,16 @@
 # discreet math assignment
-# @author Eyob Alemu
+print('''
+  _____                       _    _       _           
+ |_   _|__  __ _ _ __ ___    / \  | |_ __ | |__   __ _ 
+   | |/ _ \/ _` | '_ ` _ \  / _ \ | | '_ \| '_ \ / _` |
+   | |  __/ (_| | | | | | |/ ___ \| | |_) | | | | (_| |
+   |_|\___|\__,_|_| |_| |_/_/   \_\_| .__/|_| |_|\__,_|
+                                    |_| 
+            Members:    1) Dawit Bezabih
+                        2) Eyob Alemu
+                        3) Michael Belete
+                        4) Naol Dame               
+''')
 
 def negation(p):
     if p == True:
