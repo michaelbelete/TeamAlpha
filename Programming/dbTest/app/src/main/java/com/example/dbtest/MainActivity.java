@@ -21,5 +21,8 @@ public class MainActivity extends AppCompatActivity {
     public void onLogin(View view){
         String user = username.getText().toString();
         String pass = password.getText().toString();
+        String type = "login";
+        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type,user,pass);
     }
 }
