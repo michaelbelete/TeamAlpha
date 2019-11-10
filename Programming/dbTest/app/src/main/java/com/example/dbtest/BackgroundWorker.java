@@ -1,5 +1,6 @@
 package com.example.dbtest;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -17,6 +18,7 @@ import java.net.URLEncoder;
 
 public class BackgroundWorker extends AsyncTask<String, Void,String> {
     Context context;
+    AlertDialog alertDialog;
     BackgroundWorker(Context ctx){
         context = ctx;
     }
@@ -26,11 +28,12 @@ public class BackgroundWorker extends AsyncTask<String, Void,String> {
         String type = params[0];
         String user_name = params[1];
         String password = params[2];
-        String login_url = "http://10.0.2.2/login.php";
+        String login_url = "http://127.0.0.1/ivs/login.php";
+        String result = "intailize";
         if (type.equals("login")){
             try {
                 URL url = new URL(login_url);
-                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
                 httpURLConnection.setDoInput(true);
@@ -44,7 +47,6 @@ public class BackgroundWorker extends AsyncTask<String, Void,String> {
                 outputStream.close();
                 InputStream inputStream = httpURLConnection.getInputStream();
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
-                String result = "";
                 String line = "";
                 while ((line = bufferedReader.readLine()) != null){
                     result += line;
@@ -52,9 +54,12 @@ public class BackgroundWorker extends AsyncTask<String, Void,String> {
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
+//                return result;
             }catch (MalformedURLException e){
                 e.printStackTrace();
+                result = "error1";
             } catch (IOException e) {
+                result = "Network connection error";
                 e.printStackTrace();
             }
         }
@@ -63,12 +68,14 @@ public class BackgroundWorker extends AsyncTask<String, Void,String> {
 
     @Override
     protected void onPreExecute() {
-        super.onPreExecute();
+        alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setTitle("Login Status");
     }
 
     @Override
-    protected void onPostExecute(String  aVoid) {
-        super.onPostExecute(aVoid);
+    protected void onPostExecute(String  result) {
+        alertDialog.setMessage(result);
+        alertDialog.show();
     }
 
     @Override
